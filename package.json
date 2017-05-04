@@ -1,0 +1,33 @@
+{
+  "name": "check",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chance": "^1.0.6",
+    "enzyme": "^2.8.2",
+    "jest": "^19.0.2",
+    "jest-enzyme": "^3.0.1",
+    "jsdom": "^10.0.0",
+    "lodash": "^4.17.4",
+    "react-addons-test-utils": "^15.5.1",
+    "react-credit-cards": "^0.4.1",
+    "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.5.4",
+    "testcheck": "^1.0.0-rc.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "setupFiles": [
+      "./test-setup.js"
+    ]
+  },
+  "dependencies": {
+    "react-slick": "^0.14.11"
+  }
+}
