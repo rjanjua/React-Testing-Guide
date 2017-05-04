@@ -135,15 +135,21 @@ Property based testing is a generative testing method. You define properties for
 
 Property based testing comes from the functional programming paradigm. Quickcheck, a property based testing library developed for haskell, has inspired many implementations in other languages, including javascript.
 
-There are two main implementations in javascript: [jsverify](https://github.com/jsverify/jsverify), and [testcheck](https://github.com/leebyron/testcheck-js). I prefer testcheck as it was simpler to use and easier to read, for me at least.
+There are two main implementations in javascript: [jsverify](https://github.com/jsverify/jsverify), and [testcheck](https://github.com/leebyron/testcheck-js). I prefer testcheck as it is simpler to use and easier to read, for me at least.
 
-Example:
+You can check out the [property based testing example](/web-example/tests/property-based.test.js).
+
+We have a simple component which takes an input property and squares it. Our test checks that the property, that all displayed values are greater than or equal to zero, holds for a range of values between -infinity and inifinity. 
+
+This test  uncovered an input that I hadn't accounted for: NaN.
+
+It is possible to generate far more complex inputs with the input generator. Check out [the docs](http://leebyron.com/testcheck-js/api) for more details.
 
 ---
 
 ### Model based testing
 
-This is another generative testing method. Not popularised except in safety critical industries and no javascript implementations of this exist. It will be useful for react (and even more general) testing. I will draw up a simple POC of it with the Wow component and update this section accordingly.
+This is another generative testing method. Not popularised except in safety critical industries and no javascript implementations of this exist. It may be useful for react (and even more general) testing. I will draw up a simple POC of it with a larger React component.
 
 ---
 references: 
