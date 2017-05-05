@@ -4,13 +4,20 @@ import {Text, View, ListView } from 'react-native';
 class Example extends Component {
   constructor() {
     super();
+    this.state = { i: 0};
+  }
+
+  increment(){
+    this.setState({i: this.state.i + 1})
   }
 
   componentDidMount() {}
 
   render() {
     return (
-      <Nested clickety={this.props.ClickClock} onClick={this.props.Clicky}/>
+      <Nested clickety={this.props.ClickClock} onClick={this.props.Clicky}>
+        <Text>{this.state.i}</Text>
+      </Nested>
     );
   }
 }

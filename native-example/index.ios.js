@@ -11,22 +11,23 @@ import {
   Text,
   View
 } from 'react-native';
+import { Tester, TestHookStore, hook } from 'cavy';
+
+import AppSpec from './tests/cavy-example.test';
+
+import Example from './InteractionComponent';
+
+const Hooked = hook(Example);
+const testHookStore = new TestHookStore();
 
 export default class nativeEestExample extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <Tester specs={[AppSpec]} store={testHookStore} waitTime={1000} >  
+        <View style={styles.container}>
+          <Hooked />
+        </View>
+      </Tester>
     );
   }
 }

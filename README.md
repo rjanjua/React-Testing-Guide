@@ -113,11 +113,20 @@ Functional testing can be performed in one of several ways.
 
 Using Enzyme's mount function, snapshot testing, or through UI automation with a tool such as [appium](http://appium.io/), [cavy](https://github.com/pixielabs/cavy), or native testing tools such as espresso and XCTest.
 
-The mount function and snapshot testing have one major drawback for ReactNative: they do not run within an environment that is really comparable to the system that the component under test will eventually run on: a mobile OS. From what I have read, the most prominent issue with React components is the differences in how they behave on device between screen sizes and platforms. Therefore, at least a small degree of functional testing must be done on the device itself. A React component will be the interface to the user. It is important that components are tested from this perspective.
+The mount function and snapshot testing have one major drawback for ReactNative: they do not run within an environment that is really comparable to the system that the component under test will eventually run on: a mobile OS. For example, one issue is that when mounting a component it seems that twice as many components are 'found' than should be.
 
-On the other hand, testing on device is slow. Especially with appium. It is faster with native tools, but that doubles the development overhead. Cavy is a neat solution, but also means that you have to add refs to your components specifically for testing.
+From what I have read, the most prominent issue with React components is the differences in how they behave on device between screen sizes and platforms. Therefore, at least a small degree of functional testing must be done on the device itself. A React component will be the interface to the user. It is important that components are tested from this perspective.
 
-Example:
+On the other hand, testing on device is slow. Especially with appium. It is faster with native tools, but that doubles the development overhead. Cavy is a neat solution, but also means that you have to add refs to your components specifically for testing. 
+
+Check out this Cavy example:
+  - [test definitions](native-example/tests/cavy-example.test.js)
+  - [testable component](native-example/InteractionComponent.js)
+  - [test app](native-example/index.ios.js)
+
+Cavy is extremely powerful, and quick as it allows you direct access to the React-Native runtime within a device. The sample test runs the tests, but you do not actually see the visual rendering. However cavy can still inspect what is being rendered in the React-Native runtime - which is awesome. This  could possibly run at similar speeds to api integration tests.
+
+I'll add a description of what is actually going on soon.
 
 #### Snapshot testing
 

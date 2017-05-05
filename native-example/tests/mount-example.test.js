@@ -4,6 +4,7 @@ import {ListView} from 'react-native';
 import Example from '../exampleComponent';
 import sinon from 'sinon';
 import assert from 'assert';
+import Interactable from '../InteractionComponent'
 
 describe('enzyme works with native', () => {
 
