@@ -154,6 +154,7 @@ This test  uncovered an input that I hadn't accounted for: NaN.
 
 It is possible to generate far more complex inputs with the input generator. Check out [the docs](http://leebyron.com/testcheck-js/api) for more details.
 
+One tool that uses this concept: react-combo-test 
 ---
 
 ### Model based testing
